@@ -1,33 +1,55 @@
 # 🧠 Práctica Creacionales - C#
 
-Este práctica contiene los 3 ejercicios que fueron vistos en clase sobre los siguientes patrones de diseño creacionales:
+Este práctica contiene los 5 ejercicios que fueron vistos en clase sobre los siguientes patrones de diseño creacionales:
 - 🧱 **Builder**
 - 🧬 **Prototype**
 - 🔒 **Singleton**
+- 🏭 **Factory**
+- 🏥 **Abstract Factory**
 
 El punto de entrada del programa se encuentra en `Program.cs`, y allí se ejecutan los tres ejemplos secuencialmente para demostrar su funcionamiento.
 
-## :checkered_flag: Ejecución del `Main`
-
+## 🏁 Ejecución del `Main`
+Dentro del main tenemos un menu que se ayuda con un switch para que puedas ver los ejercicios ya implementados.
 ```csharp
 static void Main(string[] args)
     {
-        //Ejercicio Singleton
-        Console.WriteLine("-----SINGLETON-----");
-        EjecutarEjercicioSingleton();
-        
-        //Ejercicio Prototype
-        Console.WriteLine("-----PROTOTYPE-----");
-        EjecutarEjercicioPrototype();
-        
-        //Ejercicio Builder
-        Console.WriteLine("-----BUILDER-----");
-        EjecutarEjercicioBuilder();
-        
+        ...
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine("----- SINGLETON -----");
+                    EjecutarEjercicioSingleton();
+                    break;
+                case 2:
+                    Console.WriteLine("----- PROTOTYPE -----");
+                    EjecutarEjercicioPrototype();
+                    break;
+                case 3:
+                    Console.WriteLine("----- BUILDER -----");
+                    EjecutarEjercicioBuilder();
+                    break;
+                case 4:
+                    Console.WriteLine("----- FACTORY -----");
+                    EjecutarEjercicioFactory();
+                    break;
+                case 5:
+                    Console.WriteLine("----- ABSTRACT FACTORY -----");
+                    EjecutarEjercicioAbstractFactory();
+                    break;
+                case 6:
+                    Console.WriteLine("Saliendo del programa...");
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida. Intenta de nuevo.");
+                    break;
+            }
+        ...
     }
 ```
 
-El codigo que se uso para implementar cáda metodo está dentro de su respectivo folder dentro de PracticaCreacionales
+El codigo que se uso para implementar cáda metodo está dentro de su respectivo folder dentro de PracticaCreacionales.
+La practica 2 esta dentro de PracticaCraecionales_v2
 
 ## :file_folder: Estructura del Proyecto
 
@@ -42,6 +64,9 @@ EjemplosPatrones
 │ ├── EjercicioBuilder
 │ ├── EjercicioPrototype
 │ └── EjercicioSingleton
+├── PracticaCreacionales_v2
+│ ├── EjercicioAbstractFactory
+│ └── EjercicioFactory
 └── Program.cs
 ```
 
@@ -58,6 +83,11 @@ EjemplosPatrones
   - `EjercicioBuilder`: Ejercicio usando el patrón Builder.
   - `EjercicioPrototype`: Ejercicio usando el patrón Prototype.
   - `EjercicioSingleton`: Ejercicio usando el patrón Singleton.
+
+- **PracticaCreacionales_v2/**  
+  Carpeta destinada a ejercicios prácticos de la segunda tarea donde se aplica cada patrón:
+  - `EjercicioAbstractFactory`: Ejercicio usando el patrón Abstract Factory.
+  - `EjercicioFactory`: Ejercicio usando el patrón Factory.
  
 ## :ballot_box_with_check: Requisitos
 
