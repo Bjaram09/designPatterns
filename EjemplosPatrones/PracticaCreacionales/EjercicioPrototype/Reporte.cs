@@ -15,7 +15,7 @@ public class Reporte : IPrototype<Reporte>
         FechaCreacion = fechaCreacion;
     }
 
-    public Reporte Clone()
+    public Reporte Copy()
     {
         return new Reporte(Titulo, Contenido, Autor, FechaCreacion);
     }

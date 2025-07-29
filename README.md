@@ -1,4 +1,4 @@
-# 🧠 Práctica Creacionales - C#
+# 🧠 Prácticas de Patrones de Diseño - C#
 
 Este práctica contiene los 5 ejercicios que fueron vistos en clase sobre los siguientes patrones de diseño creacionales:
 - 🧱 **Builder**
@@ -10,84 +10,69 @@ Este práctica contiene los 5 ejercicios que fueron vistos en clase sobre los si
 El punto de entrada del programa se encuentra en `Program.cs`, y allí se ejecutan los tres ejemplos secuencialmente para demostrar su funcionamiento.
 
 ## 🏁 Ejecución del `Main`
-Dentro del main tenemos un menu que se ayuda con un switch para que puedas ver los ejercicios ya implementados.
+Dentro del main tenemos un menu que se ayuda con un switch para que puedas ver las practicas ya implementadas.
 ```csharp
-static void Main(string[] args)
+public static void Main(string[] args)
     {
-        ...
-            switch (opcion)
-            {
-                case 1:
-                    Console.WriteLine("----- SINGLETON -----");
-                    EjecutarEjercicioSingleton();
-                    break;
-                case 2:
-                    Console.WriteLine("----- PROTOTYPE -----");
-                    EjecutarEjercicioPrototype();
-                    break;
-                case 3:
-                    Console.WriteLine("----- BUILDER -----");
-                    EjecutarEjercicioBuilder();
-                    break;
-                case 4:
-                    Console.WriteLine("----- FACTORY -----");
-                    EjecutarEjercicioFactory();
-                    break;
-                case 5:
-                    Console.WriteLine("----- ABSTRACT FACTORY -----");
-                    EjecutarEjercicioAbstractFactory();
-                    break;
-                case 6:
-                    Console.WriteLine("Saliendo del programa...");
-                    break;
-                default:
-                    Console.WriteLine("Opción no válida. Intenta de nuevo.");
-                    break;
-            }
-        ...
+        var mainMenu = new Menu();
+        mainMenu.AddTitle("Practicas - Patrones de Diseño");
+        mainMenu.AddOption("Practica Creacionales", new PracticaCreacionalesMenuCommand());
+        mainMenu.AddOption("Practica Creacionales II", new PracticaCreacionalesV2MenuCommand());
+        mainMenu.AddOption("Seleccion Creacionales", new SeleccionCreacionalesMenuCommand());
+        mainMenu.Show();
     }
 ```
 
-El codigo que se uso para implementar cáda metodo está dentro de su respectivo folder dentro de PracticaCreacionales.
-La practica 2 esta dentro de PracticaCraecionales_v2
+Estas opciones nos llevan a un submenú donde podemos elegir qué patrón de diseño queremos ver dentro de la práctica. Cada opción está implementada en su propia clase que maneja la lógica de cada patrón.
 
-## :file_folder: Estructura del Proyecto
+## Descripción de Practicas
+- **Practica Creacionales:** Esta práctica contiene ejemplos de los patrones de diseño creacionales:
+  - `Builder`: Implementación del patrón Builder.
+  - `Prototype`: Implementación del patrón Prototype.
+  - `Singleton`: Implementación del patrón Singleton.
 
-```text
-EjemplosPatrones
-├── Dependencias
-├── Creacionales
-│ ├── BuilderPattern
-│ ├── PrototypePattern
-│ └── SingletonPattern
-├── PracticaCreacionales
-│ ├── EjercicioBuilder
-│ ├── EjercicioPrototype
-│ └── EjercicioSingleton
-├── PracticaCreacionales_v2
-│ ├── EjercicioAbstractFactory
-│ └── EjercicioFactory
-└── Program.cs
-```
+- **Practica Creacionales II:** Carpeta destinada a ejercicios prácticos de la segunda tarea donde se aplica cada patrón:
+  - `Abstract Factory`: Ejercicio usando el patrón Abstract Factory.
+  - `Factory`: Ejercicio usando el patrón Factory.
 
-## Descripción de Carpetas
+# 🧱 Selección de Patrones Creacionales
 
-- **Creacionales/**  
-  Contiene los ejercicios vistos en clase de los patrones creacionales:
-  - `BuilderPattern`: Ejemplo del patrón Builder.
-  - `PrototypePattern`: Ejemplo del patrón Prototype.
-  - `SingletonPattern`: Ejemplo del patrón Singleton.
+Esta práctica consistía en analizar distintos escenarios y decidir qué patrón de diseño creacional era el más adecuado para cada uno. Además, se debía justificar la elección y demostrar una implementación en C#.
 
-- **PracticaCreacionales/**  
-  Carpeta destinada a ejercicios prácticos donde se aplica cada patrón:
-  - `EjercicioBuilder`: Ejercicio usando el patrón Builder.
-  - `EjercicioPrototype`: Ejercicio usando el patrón Prototype.
-  - `EjercicioSingleton`: Ejercicio usando el patrón Singleton.
+---
 
-- **PracticaCreacionales_v2/**  
-  Carpeta destinada a ejercicios prácticos de la segunda tarea donde se aplica cada patrón:
-  - `EjercicioAbstractFactory`: Ejercicio usando el patrón Abstract Factory.
-  - `EjercicioFactory`: Ejercicio usando el patrón Factory.
+## 1. 📄 Creación de Documentos
+
+**Patrón utilizado:** `Factory`
+
+Se utilizó el patrón Factory porque permite crear distintos tipos de documentos (PDF, Word, Excel) de forma ordenada y extensible (se pueden añadir más tipos de documentos). En lugar de tener que conocer cómo se construye cada uno, se delega esa responsabilidad a una fábrica, lo cual facilita la incorporación de nuevos tipos sin modificar el código existente.
+
+## 2. 💻 Generación de Interfaz Gráfica
+
+**Patrón utilizado:** `Abstract Factory`
+
+Este patrón fue ideal porque permite generar conjuntos de componentes gráficos (como botones o ventanas) que son coherentes según el sistema operativo (Windows, MacOS, Linux). La clave de usar este patrón es que en el enunciado se nos dice "Familias" y con el Abstract Factory se garantiza que todos los elementos visuales se comporten y se vean todos de un mismo tipo/familia.
+
+## 3. 🕹️ Configuración de Personajes en un Videojuego
+
+**Patrón utilizado:** `Prototype`
+
+El patrón Prototype fue el más adecuado porque permite clonar un personaje que ya fue personalizado, para reutilizarlo fácilmente como NPC (personaje no jugable). Esto facilita el tener que crear cada personaje desde cero y mejora el rendimiento del sistema al replicar objetos que ya existen.
+
+## 4. 🚗 Creación de Autos Personalizados
+
+**Patrón utilizado:** `Builder`
+
+Se utilizó el patrón Builder porque permite construir un auto paso a paso, eligiendo el cilindraje del motor, carrocería y los accesorios justo como lo haría el patrón. Donde lo único que hacemos es definir las propiedades del auto sin necesidad de un constructor complejo y no mantenible.
+
+## 5. 👤 Registro de Usuario Único
+
+**Patrón utilizado:** `Singleton`
+
+En este caso, se usó Singleton para asegurar que solo exista una instancia del registro de usuarios en todo el sistema. Y eso es en esencia el singleton, garantizar que una clase tenga una única instancia y proporcionar un metodo para acceder a esa instancia. 
+
+---
+
  
 ## :ballot_box_with_check: Requisitos
 

@@ -1,7 +1,7 @@
 ﻿namespace EjemplosPatrones.PracticaCreacionales.EjercicioPrototype;
 
-public interface IPrototype<c>
+public interface IPrototype<tipo>
 {
-    c Clone();
+    tipo Copy();
 }
 
