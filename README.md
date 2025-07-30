@@ -29,6 +29,7 @@ public static void Main(string[] args)
 
 Estas opciones nos llevan a un submenú donde podemos elegir qué patrón de diseño queremos ver dentro de la práctica. Cada opción está implementada en su propia clase que maneja la lógica de cada patrón.
 
+---
 ## Descripción de Prácticas
 - **Practica Creacionales:** Esta práctica contiene ejemplos de los patrones de diseño creacionales:
   - `Builder`: Implementación del patrón Builder.
@@ -45,12 +46,10 @@ Estas opciones nos llevan a un submenú donde podemos elegir qué patrón de dis
   - `Cargador`: Ejercicio usando el patrón Adapter.
   - `GestionFactura`: Ejercicio usando el patrón Decorator.
   - `SistemaPagos`: Ejercicio usando el patrón Bridge.
-
+---
 # 🧱 Selección de Patrones Creacionales
 
 Esta práctica consistía en analizar distintos escenarios y decidir qué patrón de diseño creacional era el más adecuado para cada uno. Además, se debía justificar la elección y demostrar una implementación en C#.
-
----
 
 ## 1. 📄 Creación de Documentos
 
@@ -83,7 +82,6 @@ Se utilizó el patrón Builder porque permite construir un auto paso a paso, eli
 En este caso, se usó Singleton para asegurar que solo exista una instancia del registro de usuarios en todo el sistema. Y eso es en esencia el singleton, garantizar que una clase tenga una única instancia y proporcionar un metodo para acceder a esa instancia. 
 
 ---
-
  
 ## :ballot_box_with_check: Requisitos
 
