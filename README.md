@@ -6,6 +6,9 @@ Este práctica contiene los 5 ejercicios que fueron vistos en clase sobre los si
 - 🔒 **Singleton**
 - 🏭 **Factory**
 - 🏥 **Abstract Factory**
+- 🧩 **Adapter**
+- 🎨 **Decorator**
+- 🌉 **Bridge**
 
 El punto de entrada del programa se encuentra en `Program.cs`, y allí se ejecutan los tres ejemplos secuencialmente para demostrar su funcionamiento.
 
@@ -19,21 +22,29 @@ public static void Main(string[] args)
         mainMenu.AddOption("Practica Creacionales", new PracticaCreacionalesMenuCommand());
         mainMenu.AddOption("Practica Creacionales II", new PracticaCreacionalesV2MenuCommand());
         mainMenu.AddOption("Seleccion Creacionales", new SeleccionCreacionalesMenuCommand());
+        mainMenu.AddOption("Practica Estructurales", new PracticaEstructuralesMenuCommand());
         mainMenu.Show();
     }
 ```
 
 Estas opciones nos llevan a un submenú donde podemos elegir qué patrón de diseño queremos ver dentro de la práctica. Cada opción está implementada en su propia clase que maneja la lógica de cada patrón.
 
-## Descripción de Practicas
+## Descripción de Prácticas
 - **Practica Creacionales:** Esta práctica contiene ejemplos de los patrones de diseño creacionales:
   - `Builder`: Implementación del patrón Builder.
   - `Prototype`: Implementación del patrón Prototype.
   - `Singleton`: Implementación del patrón Singleton.
+  
 
 - **Practica Creacionales II:** Carpeta destinada a ejercicios prácticos de la segunda tarea donde se aplica cada patrón:
   - `Abstract Factory`: Ejercicio usando el patrón Abstract Factory.
   - `Factory`: Ejercicio usando el patrón Factory.
+
+
+- **Practica Estructurales :** Carpeta destinada a ejercicios prácticos de la cuarta tarea donde se aplica cada patrón:
+  - `Cargador`: Ejercicio usando el patrón Adapter.
+  - `GestionFactura`: Ejercicio usando el patrón Decorator.
+  - `SistemaPagos`: Ejercicio usando el patrón Bridge.
 
 # 🧱 Selección de Patrones Creacionales
 

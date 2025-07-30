@@ -14,6 +14,7 @@ public class Program
         mainMenu.AddOption("Practica Creacionales", new PracticaCreacionalesMenuCommand());
         mainMenu.AddOption("Practica Creacionales II", new PracticaCreacionalesV2MenuCommand());
         mainMenu.AddOption("Seleccion Creacionales", new SeleccionCreacionalesMenuCommand());
+        mainMenu.AddOption("Practica Estructurales", new PracticaEstructuralesMenuCommand());
         mainMenu.Show();
     }
 }

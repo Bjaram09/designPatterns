@@ -42,6 +42,20 @@ public class SeleccionCreacionalesMenuCommand : ICommand
     }
 }
 
+public class PracticaEstructuralesMenuCommand : ICommand
+{
+    public void Ejecutar()
+    {
+        var menu = new Menu();
+        menu.AddTitle("Práctica Estructurales");
+        menu.AddOption("Adapter - Cargador", new CargadorCommand());
+        menu.AddOption("Decorator - Sistema de gestion de factura", new GestionFacturaCommand());
+        menu.AddOption("Bridge - Sistema de procesamiento de pagos", new PagosCommand());
+        menu.AddOption("Volver al Menú Principal", new VolverMenuPrincipalCommand());
+        menu.Show();
+    }
+}
+
 public class VolverMenuPrincipalCommand : ICommand
 {
     public void Ejecutar()
