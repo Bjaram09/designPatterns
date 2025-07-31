@@ -56,6 +56,19 @@ public class PracticaEstructuralesMenuCommand : ICommand
     }
 }
 
+public class PracticaEstructuralesV2MenuCommand : ICommand
+{
+    public void Ejecutar()
+    {
+        var menu = new Menu();
+        menu.AddTitle("Práctica Estructurales II");
+        menu.AddOption("Flyweight - Ejército de soldados", new FlyweightCommand());
+        menu.AddOption("Facade - Cine de casa", new FacadeCommand());
+        menu.AddOption("Proxy - Registro de acceso", new ProxyCommand());
+        menu.Show();
+    }
+}
+
 public class VolverMenuPrincipalCommand : ICommand
 {
     public void Ejecutar()

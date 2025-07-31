@@ -1,4 +1,5 @@
-﻿using EjemplosPatrones.PracticaEstructurales;
+﻿using EjemplosPatrones.PracticaEstructurales_v2;
+using EjemplosPatrones.PracticaEstructurales;
 
 namespace EjemplosPatrones;
 
@@ -146,3 +147,42 @@ public class PagosCommand : ICommand
         Console.ReadKey();
     }
 }
+
+public class FlyweightCommand : ICommand
+{
+    public void Ejecutar()
+    {
+        Console.WriteLine("=== Patrón Flyweight ===");
+        
+        var soldierManager = new SoldierManager();
+        
+        soldierManager.AddSoldier("Infantería", "Rifle", 100, 10, 20);
+        soldierManager.AddSoldier("Infantería", "Rifle", 90, 15, 25);
+        soldierManager.AddSoldier("Tanque", "Cañón", 200, 30, 40);
+        soldierManager.AddSoldier("Tanque", "Cañón", 180, 35, 45);
+        soldierManager.AddSoldier("Infantería", "Pistola", 80, 5, 10);
+        soldierManager.AddSoldier("Infantería", "Pistola", 70, 8, 12);
+        
+        soldierManager.DisplaySoldiers();
+
+        Console.WriteLine("\nPresione una tecla para continuar...");
+        Console.ReadKey();
+    }
+}
+
+public class FacadeCommand : ICommand
+{
+    public void Ejecutar()
+    {
+        throw new NotImplementedException("Este ejercicio aún no está implementado.");
+    }
+}
+
+public class ProxyCommand : ICommand
+{
+    public void Ejecutar()
+    {
+        throw new NotImplementedException("Este ejercicio aún no está implementado.");
+    }
+}
+
