@@ -15,8 +15,6 @@ public class Menu
     {
         _options.Add(new MenuOption(description, command));
     }
-
-    // Overload to add submenu
     public void AddOption(string description, Menu submenu)
     {
         _options.Add(new MenuOption(description, submenu));

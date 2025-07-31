@@ -1,6 +1,6 @@
 # 🧠 Prácticas de Patrones de Diseño - C#
 
-Este práctica contiene los 5 ejercicios que fueron vistos en clase sobre los siguientes patrones de diseño creacionales:
+Este práctica contiene los ejercicios que fueron vistos en clase sobre los siguientes patrones de diseño creacionales:
 - 🧱 **Builder**
 - 🧬 **Prototype**
 - 🔒 **Singleton**
@@ -9,6 +9,9 @@ Este práctica contiene los 5 ejercicios que fueron vistos en clase sobre los si
 - 🧩 **Adapter**
 - 🎨 **Decorator**
 - 🌉 **Bridge**
+- 📦 **Facade**
+- 🔄 **Flyweight**
+- 🔗 **Proxy**
 
 El punto de entrada del programa se encuentra en `Program.cs`, y allí se ejecutan los tres ejemplos secuencialmente para demostrar su funcionamiento.
 
@@ -23,6 +26,7 @@ public static void Main(string[] args)
         mainMenu.AddOption("Practica Creacionales II", new PracticaCreacionalesV2MenuCommand());
         mainMenu.AddOption("Seleccion Creacionales", new SeleccionCreacionalesMenuCommand());
         mainMenu.AddOption("Practica Estructurales", new PracticaEstructuralesMenuCommand());
+        mainMenu.AddOption("Practica Estructurales II", new PracticaEstructuralesV2MenuCommand());
         mainMenu.Show();
     }
 ```
@@ -42,10 +46,15 @@ Estas opciones nos llevan a un submenú donde podemos elegir qué patrón de dis
   - `Factory`: Ejercicio usando el patrón Factory.
 
 
-- **Practica Estructurales :** Carpeta destinada a ejercicios prácticos de la cuarta tarea donde se aplica cada patrón:
+- **Practica Estructurales:** Carpeta destinada a ejercicios prácticos de la cuarta tarea donde se aplica cada patrón:
   - `Cargador`: Ejercicio usando el patrón Adapter.
-  - `GestionFactura`: Ejercicio usando el patrón Decorator.
-  - `SistemaPagos`: Ejercicio usando el patrón Bridge.
+  - `Gestion de Facturas`: Ejercicio usando el patrón Decorator.
+  - `Sistema de Pagos`: Ejercicio usando el patrón Bridge.
+
+- **Practica Estructurales II:** Carpeta destinada a ejercicios prácticos de la quinta tarea donde se aplica cada patrón:
+  - `Ejército de soldados`: Ejercicio usando el patrón Flyweight.
+  - `Cine en casa`: Ejercicio usando el patrón Facade.
+  - `Registro de acceso a base de datos`: Ejercicio usando el patrón Proxy.
 ---
 # 🧱 Selección de Patrones Creacionales
 

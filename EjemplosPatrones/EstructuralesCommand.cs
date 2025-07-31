@@ -81,8 +81,6 @@ public class GestionFacturaCommand : ICommand
         Console.WriteLine("\n=== Resumen de Factura ===");
         Console.WriteLine(decorated.GetDescription());
         Console.WriteLine($"Total a pagar: ₡{decorated.GetTotalCost():N2}");
-        Console.WriteLine("\nPresione una tecla para continuar...");
-        Console.ReadKey();
     }
 }
 
@@ -142,9 +140,6 @@ public class PagosCommand : ICommand
         
         Console.WriteLine();
         processor.ProcessPayment(amount);
-
-        Console.WriteLine("\nPresione una tecla para continuar...");
-        Console.ReadKey();
     }
 }
 
@@ -152,7 +147,7 @@ public class FlyweightCommand : ICommand
 {
     public void Ejecutar()
     {
-        Console.WriteLine("=== Patrón Flyweight ===");
+        Console.WriteLine("=== Ejército de Soldados ===");
         
         var soldierManager = new SoldierManager();
         
@@ -164,9 +159,6 @@ public class FlyweightCommand : ICommand
         soldierManager.AddSoldier("Infantería", "Pistola", 70, 8, 12);
         
         soldierManager.DisplaySoldiers();
-
-        Console.WriteLine("\nPresione una tecla para continuar...");
-        Console.ReadKey();
     }
 }
 
@@ -174,7 +166,15 @@ public class FacadeCommand : ICommand
 {
     public void Ejecutar()
     {
-        throw new NotImplementedException("Este ejercicio aún no está implementado.");
+        var homeTheater = new HomeTheaterFacade();
+        
+        Console.WriteLine("=== Cine en Casa ===");
+        homeTheater.StartMovie();
+        
+        Console.WriteLine("\nPresiona una tecla para finalizar la película...");
+        Console.ReadKey();
+        homeTheater.EndMovie();
+        
     }
 }
 
@@ -182,7 +182,13 @@ public class ProxyCommand : ICommand
 {
     public void Ejecutar()
     {
-        throw new NotImplementedException("Este ejercicio aún no está implementado.");
+        var realDatabase = new RealDatabase();
+        var proxy = new DatabaseProxy(realDatabase);
+        
+        Console.WriteLine("\nPresione una tecla para usar el proxy a la hora de conectar con la base de datos...");
+        Console.ReadKey();
+        
+        Console.WriteLine("Usando el proxy para conectarse a la base de datos:");
+        proxy.Connect();
     }
 }
-
