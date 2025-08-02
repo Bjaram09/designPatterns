@@ -1,6 +1,4 @@
-﻿using EjemplosPatrones.Comportamiento.ChainOfResponsability;
-
-namespace EjemplosPatrones.SeleccionComportamiento.Ejercicio1;
+﻿namespace EjemplosPatrones.SeleccionComportamiento.Ejercicio1;
 
 public interface IHandlerSolicitudes
 {
