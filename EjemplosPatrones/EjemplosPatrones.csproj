@@ -7,17 +7,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="SeleccionComportamiento\Ejercicio10\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio1\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio2\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio3\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio4\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio5\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio6\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio7\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio8\" />
-      <Folder Include="SeleccionComportamiento\Ejercicio9\" />
-    </ItemGroup>
-
 </Project>

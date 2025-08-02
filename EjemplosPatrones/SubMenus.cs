@@ -42,6 +42,27 @@ public class SeleccionCreacionalesMenuCommand : ICommand
     }
 }
 
+public class SeleccionComportamientoCommand : ICommand
+{
+    public void Ejecutar()
+    {
+        var menu = new Menu();
+        menu.AddTitle("Selección Comportamiento");
+        menu.AddOption("Ejercicio 1 - Procesamiento de Solicitudes en Cadena", new ChainOfResponsabilityCommand());
+        menu.AddOption("Ejercicio 2 - Editor de Texto con Comandos", new CommandCommand());
+        menu.AddOption("Ejercicio 3 - Recorrido de productos", new IteratorCommand());
+        menu.AddOption("Ejercicio 4 - Sistema de Chat", new MediatorCommand());
+        menu.AddOption("Ejercicio 5 - Progreso de Jugador", new MementoCommand());
+        menu.AddOption("Ejercicio 6 - Observador de Stock", new ObserverCommand());
+        menu.AddOption("Ejercicio 7 - Estado de pedidos", new StateCommand());
+        menu.AddOption("Ejercicio 8 - Sistema de Facturación", new StrategyCommand());
+        menu.AddOption("Ejercicio 9 - Generacion de Informes", new TemplateMethodCommand());
+        menu.AddOption("Ejercicio 10 - Analisis de archivos", new VisitorCommand());
+        menu.AddOption("Volver al Menú Principal", new VolverMenuPrincipalCommand());
+        menu.Show();
+    }
+}
+
 public class PracticaEstructuralesMenuCommand : ICommand
 {
     public void Ejecutar()
@@ -65,6 +86,7 @@ public class PracticaEstructuralesV2MenuCommand : ICommand
         menu.AddOption("Flyweight - Ejército de soldados", new FlyweightCommand());
         menu.AddOption("Facade - Cine de casa", new FacadeCommand());
         menu.AddOption("Proxy - Registro de acceso", new ProxyCommand());
+        menu.AddOption("Volver al Menú Principal", new VolverMenuPrincipalCommand());
         menu.Show();
     }
 }

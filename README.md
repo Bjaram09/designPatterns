@@ -24,9 +24,10 @@ public static void Main(string[] args)
         mainMenu.AddTitle("Practicas - Patrones de Diseño");
         mainMenu.AddOption("Practica Creacionales", new PracticaCreacionalesMenuCommand());
         mainMenu.AddOption("Practica Creacionales II", new PracticaCreacionalesV2MenuCommand());
-        mainMenu.AddOption("Seleccion Creacionales", new SeleccionCreacionalesMenuCommand());
         mainMenu.AddOption("Practica Estructurales", new PracticaEstructuralesMenuCommand());
         mainMenu.AddOption("Practica Estructurales II", new PracticaEstructuralesV2MenuCommand());
+        mainMenu.AddOption("Seleccion Creacionales", new SeleccionCreacionalesMenuCommand());
+        mainMenu.AddOption("Seleccion Comportamiento", new SeleccionComportamientoCommand());
         mainMenu.Show();
     }
 ```
@@ -89,6 +90,71 @@ Se utilizó el patrón Builder porque permite construir un auto paso a paso, eli
 **Patrón utilizado:** `Singleton`
 
 En este caso, se usó Singleton para asegurar que solo exista una instancia del registro de usuarios en todo el sistema. Y eso es en esencia el singleton, garantizar que una clase tenga una única instancia y proporcionar un metodo para acceder a esa instancia. 
+
+---
+# 🔁 Selección de Patrones de Comportamiento
+
+Esta práctica consistía en analizar distintos escenarios y decidir qué patrón de diseño de comportamiento era el más adecuado para cada uno. Además, se debía justificar la elección y demostrar una implementación en C#.
+
+## 1. 🔗 Procesamiento de solicitudes
+
+**Patrón utilizado:** `Chain of Responsibility`
+
+Se utilizó el patrón Chain of Responsibility porque permite que múltiples objetos manejen una solicitud sin necesidad de conocer cuál es el objeto que finalmente la procesará. Esto es útil en sistemas donde las solicitudes pueden ser manejadas por diferentes módulos (como facturación, inventario, etc.) y se quiere evitar un acoplamiento fuerte entre ellos.
+
+## 2. ✍️ Edición de Texto
+
+**Patrón utilizado:** `Command`
+
+Se utilizó el patrón Command porque permite encapsular acciones (en comandos) en objetos que pueden ser ejecutados, deshechos o re-hechos. Esto es útil para implementar funcionalidades de edición de texto donde se necesita mantener un historial de acciones y permitir deshacer/rehacer cambios de manera eficiente.
+
+## 3. 🛒️ Recorrer productos
+
+**Patrón utilizado:** `Iterator`
+
+Se utilizó el patrón Iterator porque permite recorrer colecciones de productos sin exponer su estructura interna. Esto es útil para implementar catálogos de productos donde se quiere iterar sobre los elementos (como productos, categorías, etc.) sin depender de la implementación interna de la colección.
+
+## 4. 💬 Sistema de Chat
+
+**Patrón utilizado:** `Mediator`
+
+Se utilizó el patrón Mediator porque permite que los componentes del sistema de chat (usuarios, mensajes) se comuniquen entre sí sin necesidad de referencias directas. Esto reduce el acoplamiento entre componentes y facilita la adición de nuevos participantes o funcionalidades al sistema.
+
+## 5. 🎮 Guardado y Restauración de Progreso en un Juego
+
+**Patrón utilizado:** `Memento`
+
+Se utilizó el patrón Memento porque permite guardar el estado interno de un objeto (en este caso, el progreso del jugador) sin violar su encapsulamiento. Esto es útil cuando se quiere implementar funciones como "Guardar partida" y "Cargar partida", ya que encapsula todo el estado necesario en un objeto separado, manteniendo limpia la lógica del juego.
+
+## 6. 📦 Notificación de Cambios de Stock
+
+**Patrón utilizado:** `Observer`
+
+Observer fue el más adecuado porque permite que varios módulos (facturación, estadísticas, alertas) se suscriban al sistema de inventario y reaccionen automáticamente cuando hay un cambio. Esto evita tener un acoplamiento fuerte entre clases y permite que el sistema sea más dinámico y extensible.
+
+## 7. 📦📬 Estados de un Pedido
+
+**Patrón utilizado:** `State`
+
+El patrón State fue útil porque cada estado del pedido (Pendiente, Enviado, Entregado, Cancelado) tiene reglas de transición diferentes. En lugar de llenar la clase con condicionales, cada estado encapsula su propio comportamiento, haciendo que el objeto cambie su lógica interna según el estado en el que se encuentre.
+
+## 8. 💳 Selección de Método de Pago
+
+**Patrón utilizado:** `Strategy`
+
+Se eligió el patrón Strategy porque permite definir múltiples formas de pago (tarjeta, PayPal, criptomonedas) de forma intercambiable. Cada estrategia de pago está encapsulada y se puede seleccionar en tiempo de ejecución, permitiendo que el sistema sea abierto a nuevas estrategias sin modificar el código existente.
+
+## 9. 🧾 Generación de Informes con Pasos Comunes
+
+**Patrón utilizado:** `Template Method`
+
+Template Method fue ideal para definir una plantilla general de generación de informes (por ejemplo: abrir archivo → preparar datos → escribir contenido → exportar), pero permitiendo que cada tipo de informe redefina algunos pasos concretos. Esto promueve la reutilización de lógica común y mantiene una estructura clara.
+
+## 10. 📊 Análisis de Archivos con Múltiples Operaciones
+
+**Patrón utilizado:** `Visitor`
+
+El patrón Visitor fue el más adecuado porque permite aplicar distintas operaciones (como contar palabras, verificar ortografía, extraer palabras clave) a diferentes tipos de documentos (`Texto`, `PDF`) **sin modificar sus clases**. Esto facilita la extensión de nuevas operaciones sin alterar la jerarquía de clases existente, promoviendo el principio de abierto/cerrado.
 
 ---
  
